@@ -19,11 +19,8 @@ class ScoreFragment : Fragment() {
 
     private lateinit var binding: ScoreFragmentBinding
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+
 
         // Inflate view and obtain an instance of the binding class
         binding = DataBindingUtil.inflate(
@@ -35,13 +32,10 @@ class ScoreFragment : Fragment() {
 
         var viewModel = ViewModelProvider(this).get(ScoreFragmentViewModel::class.java)
 
+        binding.scoreViewModel = viewModel
 
-        viewModel.number.observe(this, Observer {
-            binding.scoreText.text = it.toString()
-        })
-        binding.addOneButton.setOnClickListener {
-            viewModel.addNumber()
-        }
+        binding.setLifecycleOwner(this)
+
 
         return binding.root
     }

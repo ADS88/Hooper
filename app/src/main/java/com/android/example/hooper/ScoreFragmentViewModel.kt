@@ -13,7 +13,7 @@ class ScoreFragmentViewModel: ViewModel(){
         _number.value = 0
     }
 
-    fun addNumber(){
-        _number.value = (_number.value)?.plus(1)
+    fun addNumber(number: Int){
+        _number.value = (_number.value)?.plus(number)
     }
 }
