@@ -8,16 +8,26 @@
         android:layout_height="match_parent"
         android:layout_width="match_parent">
 
-        <!-- TODO: Update blank fragment layout -->
         <Button
             android:id="@+id/play_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/start_game"
+            android:minWidth="150dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/previous_games_button"
+            android:minWidth="150dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/previous_games"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/play_button" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

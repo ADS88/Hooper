@@ -12,6 +12,9 @@
         <action
             android:id="@+id/action_menuFragment_to_teamNameChoiceFragment"
             app:destination="@id/teamNameChoiceFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_previousGamesFragment"
+            app:destination="@id/previousGamesFragment" />
     </fragment>
     <fragment
         android:id="@+id/scoreFragment"
@@ -33,4 +36,8 @@
             app:destination="@id/scoreFragment"
             app:popUpTo="@+id/menuFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/previousGamesFragment"
+        android:name="com.android.example.hooper.screens.history.PreviousGamesFragment"
+        android:label="PreviousGamesFragment" />
 </navigation>

@@ -35,6 +35,13 @@ class MenuFragment : Fragment() {
                 MenuFragmentDirections.actionMenuFragmentToTeamNameChoiceFragment()
             )
         }
+
+        binding.previousGamesButton.setOnClickListener {
+            findNavController().navigate(
+                MenuFragmentDirections.actionMenuFragmentToPreviousGamesFragment()
+            )
+        }
+
         return binding.root
     }
 
