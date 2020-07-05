@@ -6,7 +6,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import com.android.example.hooper.databinding.ScoreFragmentBinding
+import kotlinx.android.synthetic.main.activity_main.*
 
 /**
  * A simple [Fragment] subclass.
@@ -21,7 +25,25 @@ class ScoreFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
 
-        return inflater.inflate(R.layout.score_fragment, container, false)
+        // Inflate view and obtain an instance of the binding class
+        binding = DataBindingUtil.inflate(
+            inflater,
+            R.layout.score_fragment,
+            container,
+            false
+        )
+
+        var viewModel = ViewModelProvider(this).get(ScoreFragmentViewModel::class.java)
+
+
+        viewModel.number.observe(this, Observer {
+            binding.scoreText.text = it.toString()
+        })
+        binding.addOneButton.setOnClickListener {
+            viewModel.addNumber()
+        }
+
+        return binding.root
     }
 
 

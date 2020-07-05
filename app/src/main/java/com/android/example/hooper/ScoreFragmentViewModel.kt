@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class MainActivityViewModel: ViewModel(){
+class ScoreFragmentViewModel: ViewModel(){
     private val _number = MutableLiveData<Int>()
     val number: LiveData<Int>
         get() = _number
