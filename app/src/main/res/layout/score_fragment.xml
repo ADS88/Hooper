@@ -6,7 +6,7 @@
 
         <variable
             name="scoreViewModel"
-            type="com.android.example.hooper.ScoreFragmentViewModel" />
+            type="com.android.example.hooper.screens.game.ScoreFragmentViewModel" />
     </data>
 
     <ScrollView
@@ -18,7 +18,7 @@
             android:id="@+id/score_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:context=".screens.score.ScoreFragment">
+            tools:context=".screens.game.ScoreFragment">
 
 
             <TextView

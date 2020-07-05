@@ -6,15 +6,31 @@
     app:startDestination="@id/menuFragment">
     <fragment
         android:id="@+id/menuFragment"
-        android:name="com.android.example.hooper.MenuFragment"
+        android:name="com.android.example.hooper.screens.menu.MenuFragment"
         android:label="menu_fragment"
         tools:layout="@layout/menu_fragment" >
         <action
-            android:id="@+id/action_menuFragment_to_scoreFragment"
-            app:destination="@id/scoreFragment" />
+            android:id="@+id/action_menuFragment_to_teamNameChoiceFragment"
+            app:destination="@id/teamNameChoiceFragment" />
     </fragment>
     <fragment
         android:id="@+id/scoreFragment"
-        android:name="com.android.example.hooper.ScoreFragment"
-        android:label="ScoreFragment" />
+        android:name="com.android.example.hooper.screens.game.ScoreFragment"
+        android:label="ScoreFragment" >
+        <argument
+            android:name="teamOneName"
+            app:argType="string" />
+        <argument
+            android:name="teamTwoName"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/teamNameChoiceFragment"
+        android:name="com.android.example.hooper.screens.game.TeamNameChoiceFragment"
+        android:label="TeamNameChoiceFragment" >
+        <action
+            android:id="@+id/action_teamNameChoiceFragment_to_scoreFragment"
+            app:destination="@id/scoreFragment"
+            app:popUpTo="@+id/menuFragment" />
+    </fragment>
 </navigation>

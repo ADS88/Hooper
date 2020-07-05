@@ -1,4 +1,4 @@
-package com.android.example.hooper
+package com.android.example.hooper.screens.game
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

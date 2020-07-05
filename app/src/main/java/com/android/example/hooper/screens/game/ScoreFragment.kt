@@ -1,4 +1,4 @@
-package com.android.example.hooper
+package com.android.example.hooper.screens.game
 
 
 import android.os.Bundle
@@ -7,10 +7,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import com.android.example.hooper.R
 import com.android.example.hooper.databinding.ScoreFragmentBinding
-import kotlinx.android.synthetic.main.activity_main.*
 
 /**
  * A simple [Fragment] subclass.
@@ -35,6 +34,10 @@ class ScoreFragment : Fragment() {
         binding.scoreViewModel = viewModel
 
         binding.setLifecycleOwner(this)
+
+        val args = ScoreFragmentArgs.fromBundle(requireArguments())
+        binding.teamOneName.text = args.teamOneName
+        binding.teamTwoName.text = args.teamTwoName
 
 
         return binding.root
