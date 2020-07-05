@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">Hooper</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="free_throw">Free throw</string>
+    <string name="add_two">+2 Points</string>
+    <string name="add_three">+3 Points</string>
+    <string name="reset_game">Reset</string>
+    <string name="save_and_end_game">Save and end</string>
 </resources>

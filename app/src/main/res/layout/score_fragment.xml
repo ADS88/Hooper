@@ -3,63 +3,190 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="scoreViewModel"
             type="com.android.example.hooper.ScoreFragmentViewModel" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/score_layout"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".screens.score.ScoreFragment">
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/score_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".screens.score.ScoreFragment">
 
 
-        <TextView
-            android:id="@+id/score_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="8dp"
-            android:fontFamily="sans-serif"
-            android:text="@{String.valueOf(scoreViewModel.number)}"
-            android:textSize="34sp"
-            android:textStyle="normal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintVertical_chainStyle="packed"
-            tools:text="40" />
+            <TextView
+                android:id="@+id/team_two_score_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:text="@{String.valueOf(scoreViewModel.teamTwoScore)}"
+                android:textSize="80sp"
+                android:textStyle="normal"
+                app:layout_constraintEnd_toStartOf="@+id/team_one_score_text"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/team_one_name"
+                tools:text="1" />
 
-        <Button
-            android:id="@+id/add_one_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="32dp"
-            android:onClick="@{() -> scoreViewModel.addNumber(1)}"
-            android:text="+1"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            <TextView
+                android:id="@+id/team_one_score_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{String.valueOf(scoreViewModel.teamOneScore)}"
+                android:textSize="80sp"
+                android:textStyle="normal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/team_two_score_text"
+                app:layout_constraintTop_toBottomOf="@+id/team_two_name"
+                tools:text="2" />
 
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="+2"
-            android:onClick="@{() -> scoreViewModel.addNumber(2)}"
-            app:layout_constraintBottom_toTopOf="@+id/add_one_button"
-            app:layout_constraintTop_toBottomOf="@+id/button3"
-            tools:layout_editor_absoluteX="149dp" />
+            <Button
+                android:id="@+id/add_one_team_one_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:minWidth="128dp"
+                android:onClick="@{() -> scoreViewModel.addTeamOne(1)}"
+                android:text="@string/free_throw"
+                app:layout_constraintBottom_toTopOf="@+id/save_and_end_game_button"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/add_one_team_two_button"
+                app:layout_constraintTop_toBottomOf="@+id/add_two_team_one_button" />
 
-        <Button
-            android:id="@+id/button3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="+3"
-            android:onClick="@{() -> scoreViewModel.addNumber(3)}"
-            tools:layout_editor_absoluteX="149dp"
-            tools:layout_editor_absoluteY="497dp" />
+            <Button
+                android:id="@+id/add_two_team_one_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:minWidth="128dp"
+                android:onClick="@{() -> scoreViewModel.addTeamOne(2)}"
+                android:text="@string/add_two"
+                app:layout_constraintBottom_toTopOf="@+id/add_one_team_one_button"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/add_two_team_two_button"
+                app:layout_constraintTop_toBottomOf="@+id/add_three_team_one_button"
+                app:layout_constraintVertical_bias="0.117" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <Button
+                android:id="@+id/add_three_team_one_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:minWidth="128dp"
+                android:onClick="@{() -> scoreViewModel.addTeamOne(3)}"
+                android:text="@string/add_three"
+                app:layout_constraintBottom_toTopOf="@+id/add_two_team_one_button"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/add_three_team_two_button"
+                app:layout_constraintTop_toBottomOf="@+id/team_two_score_text"
+                app:layout_constraintVertical_bias="0.0"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+
+            <Button
+                android:id="@+id/add_three_team_two_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:minWidth="128dp"
+                android:onClick="@{() -> scoreViewModel.addTeamTwo(3)}"
+                android:text="@string/add_three"
+                app:layout_constraintBottom_toTopOf="@+id/add_two_team_two_button"
+                app:layout_constraintEnd_toStartOf="@+id/add_three_team_one_button"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/team_one_score_text"
+                app:layout_constraintVertical_bias="0.0"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+            <Button
+                android:id="@+id/add_two_team_two_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:minWidth="128dp"
+                android:onClick="@{() -> scoreViewModel.addTeamTwo(2)}"
+                android:text="@string/add_two"
+                app:layout_constraintBottom_toTopOf="@+id/add_one_team_two_button"
+                app:layout_constraintEnd_toStartOf="@+id/add_two_team_one_button"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/add_three_team_two_button" />
+
+            <Button
+                android:id="@+id/add_one_team_two_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="128dp"
+                android:onClick="@{() -> scoreViewModel.addTeamTwo(1)}"
+                android:text="@string/free_throw"
+                app:layout_constraintBottom_toTopOf="@+id/reset_game_button"
+                app:layout_constraintEnd_toStartOf="@+id/add_one_team_one_button"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/add_two_team_two_button" />
+
+            <Button
+                android:id="@+id/reset_game_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:minWidth="128dp"
+                android:onClick="@{() -> scoreViewModel.resetGame()}"
+                android:text="@string/reset_game"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/save_and_end_game_button"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <Button
+                android:id="@+id/save_and_end_game_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginBottom="8dp"
+                android:minWidth="128dp"
+                android:text="@string/save_and_end_game"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/reset_game_button" />
+
+            <TextView
+                android:id="@+id/team_one_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Team one"
+                app:layout_constraintEnd_toStartOf="@+id/team_two_name"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/team_two_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Team two"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/team_one_name"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 </layout>

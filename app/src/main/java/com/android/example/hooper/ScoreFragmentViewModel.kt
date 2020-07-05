@@ -5,15 +5,29 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class ScoreFragmentViewModel: ViewModel(){
-    private val _number = MutableLiveData<Int>()
-    val number: LiveData<Int>
-        get() = _number
+    private val _teamOneScore = MutableLiveData<Int>()
+    val teamOneScore: LiveData<Int>
+        get() = _teamOneScore
+
+    private val _teamTwoScore = MutableLiveData<Int>()
+    val teamTwoScore: LiveData<Int>
+        get() = _teamTwoScore
 
     init {
-        _number.value = 0
+        _teamOneScore.value = 0
+        _teamTwoScore.value = 0
     }
 
-    fun addNumber(number: Int){
-        _number.value = (_number.value)?.plus(number)
+    fun addTeamOne(number: Int){
+        _teamOneScore.value = (_teamOneScore.value)?.plus(number)
+    }
+
+    fun addTeamTwo(number: Int){
+        _teamTwoScore.value = (_teamTwoScore.value)?.plus(number)
+    }
+
+    fun resetGame(){
+        _teamOneScore.value = 0
+        _teamTwoScore.value = 0
     }
 }
