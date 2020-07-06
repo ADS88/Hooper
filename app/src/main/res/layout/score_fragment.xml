@@ -6,7 +6,7 @@
 
         <variable
             name="scoreViewModel"
-            type="com.android.example.hooper.screens.game.ScoreFragmentViewModel" />
+            type="com.android.example.hooper.screens.game.ScoreViewModel" />
     </data>
 
     <ScrollView
