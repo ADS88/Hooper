@@ -3,8 +3,8 @@
     <string name="free_throw">Free throw</string>
     <string name="add_two">+2 Points</string>
     <string name="add_three">+3 Points</string>
-    <string name="reset_game">Reset</string>
-    <string name="finish_game">Finish</string>
+    <string name="reset_game">RESET</string>
+    <string name="finish_game">FINISH</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
