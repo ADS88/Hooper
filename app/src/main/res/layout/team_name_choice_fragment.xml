@@ -38,7 +38,7 @@
             android:layout_height="wrap_content"
             android:text="Save team names"
             style="@style/filledButton"
-            android:background="@drawable/custom_button"
+            android:background="@drawable/filled_background"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

@@ -17,4 +17,14 @@
 
     </style>
 
+    <style name="redButton">
+        <item name="android:background">@drawable/outlined_background_red</item>
+        <item name="android:textColor">@android:color/holo_red_dark</item>
+    </style>
+
+    <style name="blueButton">
+        <item name="android:background">@drawable/outlined_background_blue</item>
+        <item name="android:textColor">@android:color/holo_blue_light</item>
+    </style>
+
 </resources>
