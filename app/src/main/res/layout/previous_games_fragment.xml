@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".screens.history.PreviousGamesFragment">
 
     <data>
@@ -13,10 +14,19 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/game_list"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@{previousGamesViewModel.gamesString}" />
+            app:layout_constraintBottom_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="parent"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+        <!-- With data binding and LiveData, we can track the buttons' visibility states
+             from the ViewModel. The click handler is in the ViewModel as well, and
+             you can set it for the Views using this lambda pattern. -->
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -17,9 +17,6 @@ class PreviousGamesViewModel(
     application: Application
 ) : AndroidViewModel(application) {
 
-    private val games = database.getAllGames()
-    val gamesString = Transformations.map(games) {
-        games -> formatGames(games, application.resources)
-    }
+    val games = database.getAllGames()
 
 }

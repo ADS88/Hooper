@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 
 import com.android.example.hooper.R
@@ -38,6 +39,15 @@ class PreviousGamesFragment : Fragment() {
         binding.previousGamesViewModel = gameViewModel
 
         binding.setLifecycleOwner(this)
+
+        val adapter = GameAdapter()
+        binding.gameList.adapter = adapter
+
+        gameViewModel.games.observe(viewLifecycleOwner, Observer {
+            it?.let {
+                adapter.data = it
+            }
+        })
 
         return binding.root
     }
