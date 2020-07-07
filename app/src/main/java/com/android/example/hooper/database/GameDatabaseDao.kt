@@ -1,9 +1,6 @@
 package com.android.example.hooper.database
 
-import androidx.room.Dao
-import androidx.room.Delete
-import androidx.room.Insert
-import androidx.room.Update
+import androidx.room.*
 
 @Dao
 interface GameDatabaseDao{
@@ -15,4 +12,7 @@ interface GameDatabaseDao{
 
     @Update
     fun update(game: Game)
+
+    @Query("Select * FROM game")
+    fun getAllGames(): List<Game>
 }

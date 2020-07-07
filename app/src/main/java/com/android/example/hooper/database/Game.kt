@@ -12,5 +12,7 @@ data class Game  (
     var gameId: Long = 0L,
     val teamOneScore: Int,
     val teamTwoScore: Int,
+    val teamOneName: String,
+    val teamTwoName: String,
     val gameDate: String = DateFormat.getDateInstance().format(Calendar.getInstance().time)
 )

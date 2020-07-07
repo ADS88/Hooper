@@ -26,6 +26,9 @@
         <argument
             android:name="teamTwoName"
             app:argType="string" />
+        <action
+            android:id="@+id/action_scoreFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
     </fragment>
     <fragment
         android:id="@+id/teamNameChoiceFragment"

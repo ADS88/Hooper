@@ -9,11 +9,13 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.fragment.findNavController
 import com.android.example.hooper.R
 import com.android.example.hooper.database.GameDatabase
 import com.android.example.hooper.databinding.ScoreFragmentBinding
 import com.android.example.hooper.screens.history.PreviousGamesViewModel
 import com.android.example.hooper.screens.history.PreviousGamesViewModelFactory
+import kotlinx.coroutines.Job
 
 /**
  * A simple [Fragment] subclass.
@@ -54,9 +56,12 @@ class ScoreFragment : Fragment() {
 
         binding.scoreViewModel = scoreViewModel
 
+        binding.saveAndEndGameButton.setOnClickListener{
+           scoreViewModel.gameFinish(args.teamOneName, args.teamTwoName)
+            findNavController().navigate(ScoreFragmentDirections.actionScoreFragmentToMenuFragment())
+        }
 
         return binding.root
     }
-
 
 }
