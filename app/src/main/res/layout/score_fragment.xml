@@ -26,6 +26,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif"
+                android:textColor="@android:color/holo_blue_light"
                 android:text="@{String.valueOf(scoreViewModel.teamTwoScore)}"
                 android:textSize="80sp"
                 android:textStyle="normal"
@@ -37,6 +38,7 @@
 
             <TextView
                 android:id="@+id/team_one_score_text"
+                android:textColor="@android:color/holo_red_dark"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@{String.valueOf(scoreViewModel.teamOneScore)}"
@@ -166,6 +168,7 @@
                 app:layout_constraintStart_toEndOf="@+id/reset_game_button" />
 
             <TextView
+                android:textColor="@android:color/holo_blue_light"
                 android:id="@+id/team_one_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -177,6 +180,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
+                android:textColor="@android:color/holo_red_dark"
                 android:id="@+id/team_two_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

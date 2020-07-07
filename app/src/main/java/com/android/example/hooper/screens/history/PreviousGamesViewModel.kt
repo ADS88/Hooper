@@ -8,7 +8,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.Transformations
 import com.android.example.hooper.database.Game
 import com.android.example.hooper.database.GameDatabaseDao
-import com.android.example.hooper.formatGames
 import kotlinx.coroutines.*
 import java.util.logging.Logger
 
