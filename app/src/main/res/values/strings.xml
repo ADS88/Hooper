@@ -13,4 +13,6 @@
     <string name="team_two_name_label">Team two name</string>
     <string name="previous_games">Previous Games</string>
     <string name="vs">VS</string>
+    <string name="team_one">Team one</string>
+    <string name="team_two">Team two</string>
 </resources>
