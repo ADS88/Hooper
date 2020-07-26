@@ -25,31 +25,33 @@
                 android:id="@+id/team_one_score_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
                 android:fontFamily="sans-serif"
                 android:text="@{String.valueOf(scoreViewModel.teamOneScore)}"
                 android:textColor="@android:color/holo_blue_light"
-                android:textSize="100sp"
+                android:textSize="90sp"
                 android:textStyle="normal"
-                app:layout_constraintEnd_toStartOf="@+id/team_two_score_text"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/add_three_team_one_button"
+                app:layout_constraintEnd_toEndOf="@+id/team_one_name"
+                app:layout_constraintHorizontal_chainStyle="spread"
+                app:layout_constraintStart_toStartOf="@+id/team_one_name"
                 app:layout_constraintTop_toBottomOf="@+id/team_one_name"
                 tools:text="1" />
+
 
             <TextView
                 android:id="@+id/team_two_score_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
                 android:text="@{String.valueOf(scoreViewModel.teamTwoScore)}"
                 android:textColor="@android:color/holo_red_dark"
-                android:textSize="100sp"
+                android:textSize="90sp"
                 android:textStyle="normal"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/team_one_score_text"
+                app:layout_constraintEnd_toEndOf="@+id/team_two_name"
+                app:layout_constraintStart_toStartOf="@+id/team_two_name"
                 app:layout_constraintTop_toBottomOf="@+id/team_two_name"
                 tools:text="2" />
-
 
             <Button
                 android:id="@+id/add_one_team_one_button"
@@ -61,9 +63,8 @@
                 android:onClick="@{() -> scoreViewModel.addTeamOne(1)}"
                 android:text="@string/free_throw"
                 app:layout_constraintBottom_toTopOf="@+id/save_and_end_game_button"
-                app:layout_constraintEnd_toStartOf="@+id/add_one_team_two_button"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/team_one_name"
+                app:layout_constraintStart_toStartOf="@+id/team_one_name"
                 app:layout_constraintTop_toBottomOf="@+id/add_two_team_one_button" />
 
             <Button
@@ -76,9 +77,8 @@
                 android:onClick="@{() -> scoreViewModel.addTeamOne(2)}"
                 android:text="@string/add_two"
                 app:layout_constraintBottom_toTopOf="@+id/add_one_team_one_button"
-                app:layout_constraintEnd_toStartOf="@+id/add_two_team_two_button"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/team_one_name"
+                app:layout_constraintStart_toStartOf="@+id/team_one_name"
                 app:layout_constraintTop_toBottomOf="@+id/add_three_team_one_button"
                 app:layout_constraintVertical_bias="0.117" />
 
@@ -92,9 +92,8 @@
                 android:onClick="@{() -> scoreViewModel.addTeamOne(3)}"
                 android:text="@string/add_three"
                 app:layout_constraintBottom_toTopOf="@+id/add_two_team_one_button"
-                app:layout_constraintEnd_toStartOf="@+id/add_three_team_two_button"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/team_one_name"
+                app:layout_constraintStart_toStartOf="@+id/team_one_name"
                 app:layout_constraintTop_toBottomOf="@+id/team_two_score_text"
                 app:layout_constraintVertical_bias="0.0"
                 app:layout_constraintVertical_chainStyle="packed" />
@@ -109,9 +108,8 @@
                 android:onClick="@{() -> scoreViewModel.addTeamTwo(3)}"
                 android:text="@string/add_three"
                 app:layout_constraintBottom_toTopOf="@+id/add_two_team_two_button"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/add_three_team_one_button"
+                app:layout_constraintEnd_toEndOf="@+id/team_two_name"
+                app:layout_constraintStart_toStartOf="@+id/team_two_name"
                 app:layout_constraintTop_toBottomOf="@+id/team_one_score_text"
                 app:layout_constraintVertical_bias="0.0"
                 app:layout_constraintVertical_chainStyle="packed" />
@@ -126,9 +124,8 @@
                 android:onClick="@{() -> scoreViewModel.addTeamTwo(2)}"
                 android:text="@string/add_two"
                 app:layout_constraintBottom_toTopOf="@+id/add_one_team_two_button"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/add_two_team_one_button"
+                app:layout_constraintEnd_toEndOf="@+id/team_two_name"
+                app:layout_constraintStart_toStartOf="@+id/team_two_name"
                 app:layout_constraintTop_toBottomOf="@+id/add_three_team_two_button" />
 
             <Button
@@ -140,9 +137,8 @@
                 android:onClick="@{() -> scoreViewModel.addTeamTwo(1)}"
                 android:text="@string/free_throw"
                 app:layout_constraintBottom_toTopOf="@+id/reset_game_button"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/add_one_team_one_button"
+                app:layout_constraintEnd_toEndOf="@+id/team_two_name"
+                app:layout_constraintStart_toStartOf="@+id/team_two_name"
                 app:layout_constraintTop_toBottomOf="@+id/add_two_team_two_button" />
 
             <Button
