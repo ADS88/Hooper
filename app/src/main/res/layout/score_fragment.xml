@@ -22,37 +22,38 @@
 
 
             <TextView
-                android:id="@+id/team_two_score_text"
+                android:id="@+id/team_one_score_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif"
-                android:text="@{String.valueOf(scoreViewModel.teamTwoScore)}"
+                android:text="@{String.valueOf(scoreViewModel.teamOneScore)}"
                 android:textColor="@android:color/holo_blue_light"
                 android:textSize="100sp"
                 android:textStyle="normal"
-                app:layout_constraintEnd_toStartOf="@+id/team_one_score_text"
+                app:layout_constraintEnd_toStartOf="@+id/team_two_score_text"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/team_one_name"
                 tools:text="1" />
 
             <TextView
-                android:id="@+id/team_one_score_text"
+                android:id="@+id/team_two_score_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@{String.valueOf(scoreViewModel.teamOneScore)}"
+                android:text="@{String.valueOf(scoreViewModel.teamTwoScore)}"
                 android:textColor="@android:color/holo_red_dark"
                 android:textSize="100sp"
                 android:textStyle="normal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/team_two_score_text"
+                app:layout_constraintStart_toEndOf="@+id/team_one_score_text"
                 app:layout_constraintTop_toBottomOf="@+id/team_two_name"
                 tools:text="2" />
 
+
             <Button
                 android:id="@+id/add_one_team_one_button"
-                style="@style/redButton"
+                style="@style/blueButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
@@ -60,14 +61,14 @@
                 android:onClick="@{() -> scoreViewModel.addTeamOne(1)}"
                 android:text="@string/free_throw"
                 app:layout_constraintBottom_toTopOf="@+id/save_and_end_game_button"
-                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/add_one_team_two_button"
                 app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/add_one_team_two_button"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/add_two_team_one_button" />
 
             <Button
                 android:id="@+id/add_two_team_one_button"
-                style="@style/redButton"
+                style="@style/blueButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
@@ -75,15 +76,15 @@
                 android:onClick="@{() -> scoreViewModel.addTeamOne(2)}"
                 android:text="@string/add_two"
                 app:layout_constraintBottom_toTopOf="@+id/add_one_team_one_button"
-                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/add_two_team_two_button"
                 app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/add_two_team_two_button"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/add_three_team_one_button"
                 app:layout_constraintVertical_bias="0.117" />
 
             <Button
-                style="@style/redButton"
                 android:id="@+id/add_three_team_one_button"
+                style="@style/blueButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
@@ -91,17 +92,16 @@
                 android:onClick="@{() -> scoreViewModel.addTeamOne(3)}"
                 android:text="@string/add_three"
                 app:layout_constraintBottom_toTopOf="@+id/add_two_team_one_button"
-                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/add_three_team_two_button"
                 app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/add_three_team_two_button"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/team_two_score_text"
                 app:layout_constraintVertical_bias="0.0"
                 app:layout_constraintVertical_chainStyle="packed" />
 
-
             <Button
-                style="@style/blueButton"
                 android:id="@+id/add_three_team_two_button"
+                style="@style/redButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
@@ -109,16 +109,16 @@
                 android:onClick="@{() -> scoreViewModel.addTeamTwo(3)}"
                 android:text="@string/add_three"
                 app:layout_constraintBottom_toTopOf="@+id/add_two_team_two_button"
-                app:layout_constraintEnd_toStartOf="@+id/add_three_team_one_button"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/add_three_team_one_button"
                 app:layout_constraintTop_toBottomOf="@+id/team_one_score_text"
                 app:layout_constraintVertical_bias="0.0"
                 app:layout_constraintVertical_chainStyle="packed" />
 
             <Button
-                style="@style/blueButton"
                 android:id="@+id/add_two_team_two_button"
+                style="@style/redButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
@@ -126,33 +126,33 @@
                 android:onClick="@{() -> scoreViewModel.addTeamTwo(2)}"
                 android:text="@string/add_two"
                 app:layout_constraintBottom_toTopOf="@+id/add_one_team_two_button"
-                app:layout_constraintEnd_toStartOf="@+id/add_two_team_one_button"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/add_two_team_one_button"
                 app:layout_constraintTop_toBottomOf="@+id/add_three_team_two_button" />
 
             <Button
-                style="@style/blueButton"
                 android:id="@+id/add_one_team_two_button"
+                style="@style/redButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:minWidth="128dp"
                 android:onClick="@{() -> scoreViewModel.addTeamTwo(1)}"
                 android:text="@string/free_throw"
                 app:layout_constraintBottom_toTopOf="@+id/reset_game_button"
-                app:layout_constraintEnd_toStartOf="@+id/add_one_team_one_button"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/add_one_team_one_button"
                 app:layout_constraintTop_toBottomOf="@+id/add_two_team_two_button" />
 
             <Button
-                style="@style/filledButton"
-                android:background="@drawable/filled_background"
                 android:id="@+id/reset_game_button"
+                style="@style/filledButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="16dp"
                 android:layout_marginBottom="8dp"
+                android:background="@drawable/filled_background"
                 android:minWidth="150dp"
                 android:onClick="@{() -> scoreViewModel.resetGame()}"
                 android:text="@string/reset_game"
@@ -163,13 +163,13 @@
                 app:layout_constraintStart_toStartOf="parent" />
 
             <Button
-                style="@style/filledButton"
-                android:background="@drawable/filled_background"
                 android:id="@+id/save_and_end_game_button"
+                style="@style/filledButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginBottom="8dp"
+                android:background="@drawable/filled_background"
                 android:minWidth="150dp"
                 android:text="@string/finish_game"
                 app:layout_constraintBottom_toBottomOf="parent"
